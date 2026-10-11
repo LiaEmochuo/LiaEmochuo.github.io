@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Lia Emochuo — Web Developer, Creator & Entrepreneur</title>
+<meta name="description" content="Lia Emochuo is a full-stack web developer, creator and entrepreneur. Portfolio of websites and platforms, plus the Lilian Enterprise shop.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231E1B17'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='%23D9B56A' font-family='Georgia,serif'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+[hidden]{display:none !important;}
+  :root{
+    --ink:#1E1B17;
+    --paper:#EFEAE0;
+    --paper-2:#E6E0D2;
+    --gold:#9C7A3C;
+    --forest:#33473B;
+    --line:#D6CFBE;
+    --muted:#6B6459;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;object-fit:cover;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.01em;line-height:1.08;}
+  .eyebrow{font-size:13px;color:var(--gold);letter-spacing:0.02em;margin-bottom:10px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:2px;font-size:14px;font-weight:600;
+    border:1px solid var(--ink);transition:all .2s ease;cursor:pointer;
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--forest);border-color:var(--forest);}
+  .btn-outline{background:transparent;color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  section{padding:88px 0;}
+  .rule{border-top:1px solid var(--line);}
+  .grid{display:grid;gap:32px;}
+
+  /* ---------- Nav ---------- */
+  header{position:sticky;top:0;z-index:40;background:rgba(239,234,224,0.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:1180px;margin:0 auto;}
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:600;cursor:pointer;}
+  .nav-links{display:flex;gap:36px;font-size:14px;align-items:center;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .nav-cta{display:none;}
+  @media(min-width:860px){.nav-cta{display:inline-flex;}}
+  .nav-links-desktop{display:none;}
+  @media(min-width:860px){.nav-links-desktop{display:flex;}}
+  .burger{font-size:14px;border:1px solid var(--ink);padding:8px 14px;border-radius:2px;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  @media(min-width:860px){.burger{display:none;}}
+
+  /* ---------- Mobile Drawer ---------- */
+  .mobile-drawer{
+    position:fixed;top:0;right:-100%;width:100%;max-width:360px;height:100vh;background:var(--paper);
+    z-index:100;border-left:1px solid var(--line);box-shadow:-10px 0 30px rgba(0,0,0,0.15);
+    transition:right 0.3s ease;display:flex;flex-direction:column;padding:32px;
+  }
+  .mobile-drawer.open{right:0;}
+  .drawer-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+  .close-drawer{background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink);}
+  .drawer-links{display:flex;flex-direction:column;gap:20px;font-size:18px;font-family:'Fraunces',serif;}
+  .drawer-links a{border-bottom:1px solid var(--line);padding-bottom:12px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;padding:32px 0 200px;color:#fff;overflow:hidden;
+    background:linear-gradient(180deg,rgba(20,18,14,0.72) 0%,rgba(20,18,14,0.45) 45%,rgba(20,18,14,0.86) 100%),
+      url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?fm=jpg&q=75&w=1800&auto=format&fit=crop') center/cover no-repeat;
+  }
+  @media(min-width:960px){.hero{padding:90px 0 130px;}}
+  .hero-inner{max-width:640px;}
+  .hero .eyebrow{color:#E4C98A;}
+  .hero-slot{margin-bottom:24px;}
+  .hero-avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;display:block;border:4px solid rgba(255,255,255,0.85);box-shadow:0 8px 24px rgba(0,0,0,0.35);}
+  @media(min-width:640px){.hero-avatar{width:180px;height:180px;}}
+  .hero-btns .btn{display:inline-flex;align-items:center;gap:10px;}
+  .hero-btns .btn:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important;}
+  .hero-btns .btn svg{width:18px;height:18px;fill:currentColor;flex-shrink:0;}
+  @media(max-width:639px){.hero-btns{flex-direction:column;gap:12px;}.hero-btns .btn{width:100%;justify-content:flex-start;}}
+  .hero h1{font-size:38px;color:#fff;}
+  @media(min-width:640px){.hero h1{font-size:56px;}}
+  .hero p{max-width:440px;color:#E6E1D6;margin:20px 0 32px;font-size:16px;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+  .hero .btn-solid{background:#fff;color:var(--ink);border-color:#fff;}
+  .hero .btn-solid:hover{background:var(--gold);border-color:var(--gold);color:#fff;}
+  .btn-arrow{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;}
+  .stat-row{display:flex;gap:48px;flex-wrap:wrap;}
+  .stat-row .num{font-family:'Fraunces',serif;font-size:30px;color:#fff;}
+  .stat-row .label{font-size:12.5px;color:#C9C2B4;}
+  .hero-card{
+    position:absolute;left:24px;right:24px;bottom:-46px;background:var(--paper);
+    border:1px solid var(--line);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    box-shadow:0 18px 40px rgba(20,18,14,0.22);max-width:1132px;margin:0 auto;
+  }
+  @media(min-width:640px){.hero-card{left:50%;right:auto;transform:translateX(-50%);width:calc(100% - 48px);}}
+  .agent-cluster{display:flex;align-items:center;}
+  .agent-cluster img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--paper);margin-left:-12px;}
+  .agent-cluster img:first-child{margin-left:0;}
+  .hero-card .agents-text{margin-left:14px;}
+  .hero-card .agents-text b{font-size:14px;display:block;}
+  .hero-card .agents-text span{font-size:12px;color:var(--muted);}
+  .hero-card .rating{font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;}
+  .hero-card .rating .stars{color:var(--gold);letter-spacing:1px;}
+
+  /* ---------- Search & Filters Bar ---------- */
+  .search-filter-section{background:var(--paper-2);padding:40px 0 20px;border-top:1px solid var(--line);}
+  .filter-container{display:flex;flex-direction:column;gap:16px;}
+  @media(min-width:768px){.filter-container{flex-direction:row;align-items:center;justify-content:space-between;}}
+  .search-bar{display:flex;flex:1;max-width:500px;border:1px solid var(--line);background:var(--paper);border-radius:2px;overflow:hidden;}
+  .search-bar input{flex:1;border:none;background:transparent;padding:12px 16px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);outline:none;}
+  .search-bar button{background:var(--ink);color:#fff;border:none;padding:0 20px;font-weight:600;cursor:pointer;}
+  .filter-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .filter-btn{padding:8px 16px;border:1px solid var(--line);background:var(--paper);font-size:13px;font-weight:500;border-radius:2px;cursor:pointer;transition:all 0.2s;}
+  .filter-btn.active, .filter-btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+  /* ---------- Section heading ---------- */
+  .section-head{max-width:560px;margin-bottom:56px;}
+  .section-head h2{font-size:32px;}
+  @media(min-width:640px){.section-head h2{font-size:40px;}}
+  .section-head p{color:var(--muted);margin-top:16px;}
+
+  /* ---------- Steps ---------- */
+  .step{display:grid;gap:28px;padding:44px 0;border-top:1px solid var(--line);}
+  @media(min-width:800px){.step{grid-template-columns:80px 1fr 1.1fr;align-items:center;}}
+  .step-num{font-family:'Fraunces',serif;font-size:40px;color:var(--gold);}
+  .step h3{font-size:24px;margin-bottom:12px;}
+  .step p{color:var(--muted);max-width:420px;}
+  .step img{width:100%;height:220px;object-fit:cover;}
+
+  /* ---------- Services ---------- */
+  .services{display:grid;gap:0;border-top:1px solid var(--line);}
+  .service-row{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .service-row .icon{width:38px;height:38px;flex-shrink:0;color:var(--forest);}
+  .service-row h4{font-size:18px;margin-bottom:6px;}
+  .service-row p{color:var(--muted);font-size:14.5px;max-width:520px;}
+
+  /* ---------- Listings / Projects ---------- */
+  .listing-grid{display:grid;gap:28px;grid-template-columns:1fr;}
+  @media(min-width:700px){.listing-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1040px){.listing-grid{grid-template-columns:1fr 1fr 1fr;}}
+  .listing-card{border:1px solid var(--line);background:var(--paper);cursor:pointer;transition:transform 0.2s, box-shadow 0.2s;display:flex;flex-direction:column;}
+  .listing-card:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(20,18,14,0.08);}
+  .listing-card img{width:100%;height:230px;object-fit:cover;}
+  .listing-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1;}
+  .listing-loc{font-size:12.5px;color:var(--gold);margin-bottom:8px;letter-spacing:0.01em;}
+  .listing-body h4{font-family:'Fraunces',serif;font-size:20px;margin-bottom:8px;}
+  .listing-price{font-weight:600;font-size:17px;margin-bottom:14px;}
+  .listing-meta{display:flex;gap:16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:auto;}
+
+  /* ---------- Excellence / Stats ---------- */
+  .excellence{background:var(--ink);color:var(--paper);}
+  .excellence .wrap{display:grid;gap:44px;}
+  @media(min-width:900px){.excellence .wrap{grid-template-columns:1fr 1fr;align-items:center;}}
+  .excellence img{width:100%;height:420px;object-fit:cover;}
+  .excellence .eyebrow{color:var(--gold);}
+  .excellence h2{font-size:34px;color:var(--paper);}
+  .excellence p{color:#C9C2B4;margin:18px 0 32px;}
+  .excellence-stats{display:flex;gap:40px;flex-wrap:wrap;}
+  .excellence-stats .num{font-family:'Fraunces',serif;font-size:32px;color:var(--gold);}
+  .excellence-stats .label{font-size:12.5px;color:#B7AF9E;}
+
+  /* ---------- Team / Profile Section ---------- */
+  .team-grid{display:grid;gap:32px;grid-template-columns:1fr;}
+  @media(min-width:700px){.team-grid{grid-template-columns:repeat(3,1fr);}}
+  .team-card img{width:100%;height:280px;object-fit:cover;}
+  .team-card{border:1px solid var(--line);}
+  .team-info{padding:18px 20px 22px;}
+  .team-info h4{font-family:'Fraunces',serif;font-size:19px;}
+  .team-info .role{font-size:13px;color:var(--gold);margin-top:4px;}
+
+  /* ---------- Testimonials ---------- */
+  .testi-grid{display:grid;gap:28px;}
+  @media(min-width:800px){.testi-grid{grid-template-columns:repeat(3,1fr);}}
+  .testi{border:1px solid var(--line);padding:28px 26px;background:var(--paper);}
+  .testi p{font-family:'Fraunces',serif;font-size:18px;line-height:1.5;margin-bottom:20px;}
+  .testi .who{font-size:13px;color:var(--muted);}
+  .testi .who b{color:var(--ink);}
+
+  /* ---------- Insights ---------- */
+  .insight-grid{display:grid;gap:28px;grid-template-columns:1fr;}
+  @media(min-width:800px){.insight-grid{grid-template-columns:1.2fr 1fr 1fr;}}
+  .insight-feature{border:1px solid var(--line);cursor:pointer;background:var(--paper);}
+  .insight-feature img{width:100%;height:340px;object-fit:cover;}
+  .insight-small{border:1px solid var(--line);display:flex;flex-direction:column;min-height:340px;cursor:pointer;background:var(--paper);}
+  .insight-small img{width:100%;height:150px;object-fit:cover;}
+  .insight-small-body{padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;flex:1;}
+  .insight-body{padding:20px 22px 24px;}
+  .insight-tag{font-size:12px;color:var(--gold);margin-bottom:8px;}
+  .insight-small h4, .insight-body h4{font-family:'Fraunces',serif;font-size:19px;}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:var(--forest);color:var(--paper);text-align:center;}
+  .cta-band h2{color:var(--paper);font-size:30px;margin-bottom:20px;}
+  @media(min-width:640px){.cta-band h2{font-size:38px;}}
+  .cta-band .btn-solid{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+
+  /* ---------- Modal / Dialog Box ---------- */
+  .modal-overlay{
+    position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(20,18,14,0.65);
+    z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;
+    opacity:0;pointer-events:none;transition:opacity 0.25s ease;
+  }
+  .modal-overlay.active{opacity:1;pointer-events:auto;}
+  .modal-card{
+    background:var(--paper);border:1px solid var(--line);width:100%;max-width:640px;
+    padding:36px;border-radius:2px;max-height:90vh;overflow-y:auto;position:relative;
+    box-shadow:0 25px 50px rgba(0,0,0,0.25);
+  }
+  .modal-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:22px;cursor:pointer;}
+  .form-group{margin-bottom:20px;}
+  .form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--ink);}
+  .form-group input, .form-group textarea, .form-group select{
+    width:100%;padding:12px 16px;border:1px solid var(--line);background:#fff;
+    font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);border-radius:2px;outline:none;
+  }
+  .form-group input:focus, .form-group textarea:focus{border-color:var(--gold);}
+
+  /* ---------- Notification Toast ---------- */
+  .toast{
+    position:fixed;bottom:24px;right:24px;background:var(--ink);color:var(--paper);
+    padding:16px 24px;border-radius:2px;font-size:14px;z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);transform:translateY(100px);opacity:0;
+    transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .toast.show{transform:translateY(0);opacity:1;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#C9C2B4;padding:64px 0 28px;}
+  .foot-grid{display:grid;gap:36px;grid-template-columns:1fr;margin-bottom:48px;}
+  @media(min-width:700px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;}}
+  footer .logo{color:var(--paper);margin-bottom:14px;}
+  footer h5{font-size:13px;color:var(--paper);letter-spacing:0.03em;margin-bottom:16px;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;}
+  footer ul a:hover{color:var(--paper);}
+  footer .bottom{border-top:1px solid #3A362F;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;}
+  footer .bottom a{color:#E4C98A;text-decoration:underline;}
+
+/* ---------- Added: Blog & Admin extras ---------- */
+.blog-hero{padding:140px 0 60px;background:var(--ink);color:var(--paper);}
+.blog-hero h1{color:#fff;font-size:38px;}
+.blog-hero p{color:#C9C2B4;margin-top:14px;max-width:520px;}
+.blog-grid{display:grid;gap:28px;grid-template-columns:1fr;}
+@media(min-width:700px){.blog-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1040px){.blog-grid{grid-template-columns:1fr 1fr 1fr;}}
+.blog-card{border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s;}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(20,18,14,0.08);}
+.blog-card img{width:100%;height:210px;object-fit:cover;}
+.blog-card .blog-card-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1;}
+.blog-card .blog-date{font-size:12.5px;color:var(--gold);margin-bottom:8px;}
+.blog-card h3{font-family:'Fraunces',serif;font-size:20px;margin-bottom:10px;}
+.blog-card .excerpt{color:var(--muted);font-size:14.5px;flex:1;}
+.blog-card .read-more{margin-top:16px;font-size:13px;font-weight:600;color:var(--gold);}
+.blog-empty{text-align:center;padding:80px 20px;color:var(--muted);}
+
+.post-wrap{max-width:760px;margin:0 auto;padding:140px 24px 40px;}
+.post-wrap .post-tag{font-size:13px;color:var(--gold);margin-bottom:10px;}
+.post-wrap h1{font-size:32px;margin-bottom:10px;}
+@media(min-width:640px){.post-wrap h1{font-size:42px;}}
+.post-meta{color:var(--muted);font-size:13.5px;margin-bottom:28px;}
+.post-cover{width:100%;max-height:420px;object-fit:cover;margin-bottom:32px;border-radius:2px;}
+.post-content{font-size:16.5px;line-height:1.8;color:var(--ink);}
+.post-content p{margin-bottom:20px;}
+.post-content img{margin:24px 0;border-radius:2px;}
+.back-link{display:inline-block;margin-bottom:24px;font-size:13.5px;color:var(--muted);}
+.back-link:hover{color:var(--gold);}
+
+.comments-section{margin-top:56px;border-top:1px solid var(--line);padding-top:36px;}
+.comments-section h3{font-family:'Fraunces',serif;font-size:22px;margin-bottom:24px;}
+.comment{border-bottom:1px solid var(--line);padding:18px 0;}
+.comment .comment-head{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-bottom:8px;flex-wrap:wrap;gap:6px;}
+.comment .comment-head b{color:var(--ink);font-size:14.5px;}
+.comment p{font-size:15px;line-height:1.6;}
+.comment-form{margin-top:28px;background:var(--paper-2);padding:24px;border:1px solid var(--line);}
+.comment-form .form-row{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:600px){.comment-form .form-row{grid-template-columns:1fr 1fr;}}
+.alert{padding:14px 18px;border-radius:2px;font-size:14px;margin-bottom:20px;}
+.alert-error{background:#F6E3E0;color:#8A2E1F;border:1px solid #E3B7AE;}
+.alert-success{background:#E4EEE3;color:#2E4A2E;border:1px solid #B9D3B4;}
+
+/* ---------- Admin ---------- */
+.admin-shell{max-width:900px;margin:0 auto;padding:140px 24px 60px;}
+.admin-shell h1{font-size:30px;margin-bottom:8px;}
+.admin-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:12px;}
+.admin-login-box{max-width:380px;margin:120px auto;padding:36px;border:1px solid var(--line);background:var(--paper);}
+.admin-login-box h1{font-size:24px;margin-bottom:24px;text-align:center;}
+.admin-post-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.admin-post-row .title{font-family:'Fraunces',serif;font-size:18px;}
+.admin-post-row .meta{font-size:13px;color:var(--muted);}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.admin-actions a, .admin-actions button{font-size:13px;padding:8px 14px;}
+.btn-danger{border-color:#8A2E1F;color:#8A2E1F;}
+.btn-danger:hover{background:#8A2E1F;color:#fff;}
+textarea.form-group-textarea{min-height:260px;font-family:'Inter',sans-serif;}
+.form-group small{display:block;margin-top:6px;color:var(--muted);font-size:12.5px;}
+
+/* ---------- Shop ---------- */
+.shop-card{border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s;}
+.shop-card:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(20,18,14,0.08);}
+.shop-card img{width:100%;height:220px;object-fit:cover;}
+.shop-card .shop-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1;}
+.shop-card h3{font-family:'Fraunces',serif;font-size:16.5px;margin-bottom:10px;line-height:1.35;}
+.shop-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.shop-price{font-weight:600;font-size:17px;color:var(--ink);}
+.shop-badge{font-size:11px;font-weight:600;letter-spacing:0.03em;color:var(--forest);background:#E4EEE3;border:1px solid #B9D3B4;padding:4px 10px;border-radius:20px;}
+.shop-btn-row{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+.shop-btn-row .btn{width:100%;justify-content:center;padding:11px 16px;font-size:13px;}
+
+/* ---------- Portfolio page (dark + gold) ---------- */
+body.pf-page{--pf-bg:#0f0d0a;--pf-bg2:#14110d;--pf-card:#181510;--pf-line:#2d2618;--pf-text:#f3ece0;--pf-muted:#b3a994;--pf-gold:#d9b56a;--pf-grad:linear-gradient(135deg,#f3dfa8,#c9a24f);background:var(--pf-bg);color:var(--pf-text);}
+.pf-page h1,.pf-page h2,.pf-page h3,.pf-page h4{color:var(--pf-text);}
+.pf-page section{padding:72px 0;}
+.pf-hero{position:relative;overflow:hidden;padding:84px 0 80px;background:radial-gradient(120% 80% at 0% 0%,#1b1710 0%,#0f0d0a 60%);}
+.pf-hero::before{content:"";position:absolute;top:-170px;right:-190px;width:380px;height:380px;border-radius:50%;border:1px solid rgba(217,181,106,.55);box-shadow:0 0 70px rgba(217,181,106,.12) inset;}
+.pf-hero::after{content:"";position:absolute;bottom:-190px;left:-170px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(217,181,106,.45);box-shadow:0 0 70px rgba(217,181,106,.1) inset;}
+.pf-hero .wrap{position:relative;z-index:1;}
+.pf-eyebrow{display:flex;align-items:center;gap:16px;color:var(--pf-gold);font-size:15px;margin-bottom:22px;}
+.pf-eyebrow::before{content:"";width:52px;height:1px;background:var(--pf-gold);}
+.pf-hero h1{font-size:42px;line-height:1.06;max-width:780px;color:#fff;}
+@media(min-width:760px){.pf-hero h1{font-size:62px;}.pf-hero{padding:110px 0 100px;}}
+.pf-hero p.pf-lead{color:var(--pf-muted);margin-top:22px;max-width:600px;font-size:17px;line-height:1.7;}
+.pf-stats{display:flex;flex-wrap:wrap;gap:26px 40px;margin-top:38px;}
+.pf-stat{position:relative;}
+.pf-stat+.pf-stat:not(.pf-stat-full){padding-left:40px;}
+.pf-stat+.pf-stat:not(.pf-stat-full)::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--pf-line);}
+.pf-stat .num{font-family:'Fraunces',serif;font-size:42px;color:#fff;line-height:1.1;}
+.pf-stat .label{font-size:15px;color:var(--pf-muted);margin-top:4px;}
+.pf-stat-full{flex-basis:100%;}
+.pf-stat-full::after{content:"";display:block;width:58px;height:2px;background:var(--pf-gold);margin-top:18px;}
+.pf-hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+.pf-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;}
+.pf-btn-gold{background:var(--pf-grad);color:#1a1409;border:1px solid transparent;box-shadow:0 8px 24px rgba(201,162,79,.25);}
+.pf-btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,79,.35);}
+.pf-btn-line{background:rgba(255,255,255,.02);color:var(--pf-text);border:1px solid rgba(217,181,106,.7);}
+.pf-btn-line:hover{background:rgba(217,181,106,.12);}
+.pf-filters{position:sticky;top:73px;z-index:30;background:rgba(15,13,10,.94);backdrop-filter:blur(6px);border-top:1px solid var(--pf-line);border-bottom:1px solid var(--pf-line);padding:14px 0;}
+.pf-filters .filter-tabs{display:flex;gap:8px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;scrollbar-width:none;}
+.pf-filters .filter-tabs::-webkit-scrollbar{display:none;}
+.pf-filters .filter-btn{white-space:nowrap;background:transparent;color:var(--pf-muted);border:1px solid var(--pf-line);border-radius:30px;padding:9px 18px;font-size:13.5px;}
+.pf-filters .filter-btn:hover{color:var(--pf-text);border-color:var(--pf-gold);background:transparent;}
+.pf-filters .filter-btn.active{background:var(--pf-grad);color:#1a1409;border-color:transparent;}
+.pf-head{margin-bottom:34px;}
+.pf-head .pf-eyebrow{margin-bottom:14px;}
+.pf-head h2{font-size:32px;max-width:640px;}
+@media(min-width:760px){.pf-head h2{font-size:42px;}}
+.pf-head p{color:var(--pf-muted);margin-top:12px;max-width:560px;}
+.pf-grid{display:grid;gap:26px;grid-template-columns:1fr;}
+@media(min-width:700px){.pf-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1040px){.pf-grid{grid-template-columns:1fr 1fr 1fr;}}
+.pf-card{display:flex;flex-direction:column;background:var(--pf-card);border:1px solid var(--pf-line);border-radius:10px;overflow:hidden;color:inherit;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.pf-card:hover{transform:translateY(-4px);border-color:rgba(217,181,106,.7);box-shadow:0 18px 40px rgba(0,0,0,.45);}
+.pf-card.hide{display:none;}
+.pf-shot{position:relative;aspect-ratio:3/2;background:linear-gradient(135deg,#2a2314,#0f0d0a);overflow:hidden;}
+.pf-shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.pf-card:hover .pf-shot img{transform:scale(1.05);}
+.pf-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,13,10,0) 55%,rgba(15,13,10,.65));pointer-events:none;}
+.pf-initial{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:68px;color:rgba(217,181,106,.28);}
+.pf-badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(15,13,10,.82);color:var(--pf-gold);border:1px solid rgba(217,181,106,.45);font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:30px;}
+.pf-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+.pf-body h3{font-size:23px;margin-bottom:8px;}
+.pf-body p{color:var(--pf-muted);font-size:14.5px;margin-bottom:16px;}
+.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.pf-tags span{font-size:11.5px;border:1px solid var(--pf-line);padding:3px 10px;border-radius:30px;color:var(--pf-muted);}
+.pf-tags span.pf-hl{background:var(--pf-grad);color:#1a1409;border-color:transparent;font-weight:600;}
+.pf-tags span.pf-mine{border-color:rgba(217,181,106,.55);color:var(--pf-gold);}
+.pf-link{margin-top:auto;border-top:1px solid var(--pf-line);padding-top:14px;display:flex;justify-content:space-between;font-size:14px;font-weight:600;color:var(--pf-text);}
+.pf-card:hover .pf-link{color:var(--pf-gold);}
+.pf-empty{display:none;text-align:center;padding:50px 0;color:var(--pf-muted);}
+.pf-alt{background:var(--pf-bg2);border-top:1px solid var(--pf-line);border-bottom:1px solid var(--pf-line);}
+.pf-process{display:grid;gap:22px;}
+@media(min-width:800px){.pf-process{grid-template-columns:repeat(4,1fr);}}
+.pf-process>div{border:1px solid var(--pf-line);border-radius:10px;padding:22px;background:var(--pf-card);}
+.pf-process b{font-family:'Fraunces',serif;font-size:30px;font-weight:500;background:var(--pf-grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:8px;}
+.pf-process h4{font-size:20px;margin-bottom:6px;}
+.pf-process p{font-size:14px;color:var(--pf-muted);}
+.pf-about{display:grid;gap:30px;}
+@media(min-width:860px){.pf-about{grid-template-columns:1.35fr 1fr;align-items:start;}}
+.pf-about h2{font-size:34px;margin-bottom:14px;}
+.pf-about p{color:var(--pf-muted);line-height:1.8;}
+.pf-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;}
+.pf-chips span{border:1px solid rgba(217,181,106,.5);color:var(--pf-text);font-size:13px;padding:6px 14px;border-radius:30px;background:rgba(217,181,106,.06);}
+.pf-edu{border:1px solid var(--pf-line);border-radius:10px;background:var(--pf-card);padding:28px;}
+.pf-edu small{font-size:12.5px;color:var(--pf-gold);letter-spacing:.04em;text-transform:uppercase;}
+.pf-edu h4{font-size:24px;margin:8px 0;}
+.pf-edu p{font-size:14.5px;}
+.pf-cta{position:relative;overflow:hidden;text-align:center;background:radial-gradient(100% 140% at 50% 0%,#241d0f 0%,#0f0d0a 70%);border-top:1px solid var(--pf-line);}
+.pf-cta h2{font-size:34px;margin-bottom:12px;}
+@media(min-width:760px){.pf-cta h2{font-size:46px;}}
+.pf-cta p{color:var(--pf-muted);margin:0 auto 26px;max-width:480px;}
+.pf-cta .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.pf-page footer{background:#0a0907;border-top:1px solid var(--pf-line);}
+.pf-page header,.pf-page .mobile-drawer{color:#1E1B17;}
+.pf-page footer .logo{color:#EFEAE0;}
+
+
+/* ---------- Portfolio hero (dark + gold) ---------- */
+.pf-hero{--pf-gold:#d9b56a;--pf-line:#2d2618;--pf-muted:#b3a994;--pf-grad:linear-gradient(135deg,#f3dfa8,#c9a24f);position:relative;overflow:hidden;padding:34px 0 30px;background:radial-gradient(120% 80% at 0% 0%,#1b1710 0%,#0f0d0a 60%);color:#f3ece0;}
+.pf-hero::before{content:"";position:absolute;top:-170px;right:-190px;width:380px;height:380px;border-radius:50%;border:1px solid rgba(217,181,106,.55);box-shadow:0 0 70px rgba(217,181,106,.12) inset;}
+.pf-hero::after{content:"";position:absolute;bottom:-190px;left:-170px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(217,181,106,.45);box-shadow:0 0 70px rgba(217,181,106,.1) inset;}
+.pf-hero .wrap{position:relative;z-index:1;}
+.pf-eyebrow{display:flex;align-items:center;gap:14px;color:var(--pf-gold);font-size:14px;margin-bottom:12px;}
+.pf-eyebrow::before{content:"";width:52px;height:1px;background:var(--pf-gold);}
+.pf-hero h1{font-size:30px;line-height:1.1;max-width:780px;color:#fff;}
+@media(min-width:760px){.pf-hero h1{font-size:50px;}.pf-hero{padding:64px 0 56px;}}
+.pf-hero p.pf-lead{color:var(--pf-muted);margin-top:12px;max-width:600px;font-size:15px;line-height:1.55;}
+.pf-stats{display:flex;flex-wrap:nowrap;gap:0;margin-top:20px;}
+.pf-stat{position:relative;}
+.pf-stat{padding-right:16px;}
+.pf-stat+.pf-stat{padding-left:16px;}
+@media(min-width:760px){.pf-stat{padding-right:36px;}.pf-stat+.pf-stat{padding-left:36px;}}
+.pf-stat+.pf-stat::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--pf-line);}
+.pf-stat .num{white-space:nowrap;font-family:'Fraunces',serif;font-size:22px;color:#fff;line-height:1.1;}
+@media(min-width:760px){.pf-stat .num{font-size:34px;}}
+.pf-stat .label{font-size:12px;color:var(--pf-muted);margin-top:3px;line-height:1.3;}
+.pf-hero-btns{display:flex;gap:10px;margin-top:20px;}
+.pf-hero-btns .pf-btn{flex:1;justify-content:center;}
+@media(min-width:760px){.pf-hero-btns .pf-btn{flex:none;}}
+.pf-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 16px;border-radius:6px;font-size:14.5px;white-space:nowrap;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;}
+.pf-btn-gold{background:var(--pf-grad);color:#1a1409;border:1px solid transparent;box-shadow:0 8px 24px rgba(201,162,79,.25);}
+.pf-btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,79,.35);}
+.pf-btn-line{background:rgba(255,255,255,.02);color:#f3ece0;border:1px solid rgba(217,181,106,.7);}
+.pf-btn-line:hover{background:rgba(217,181,106,.12);}
+
+/* ---------- Everything below the hero (original light design) ---------- */
+.pf-filters{position:sticky;top:73px;z-index:30;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 0;}
+.pf-filters .filter-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+.pf-filters .filter-btn{white-space:nowrap;}
+.pf-grid{display:grid;gap:28px;grid-template-columns:1fr;}
+@media(min-width:700px){.pf-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1040px){.pf-grid{grid-template-columns:1fr 1fr 1fr;}}
+.pf-card{border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;color:inherit;}
+.pf-card:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(20,18,14,.08);}
+.pf-card.hide{display:none;}
+.pf-shot{position:relative;aspect-ratio:3/2;background:linear-gradient(135deg,var(--forest),var(--ink));overflow:hidden;}
+.pf-shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s ease;}
+.pf-card:hover .pf-shot img{transform:scale(1.04);}
+.pf-initial{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:64px;color:rgba(239,234,224,.25);}
+.pf-badge{position:absolute;top:12px;left:12px;background:var(--paper);font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:2px;z-index:2;color:var(--ink);}
+.pf-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+.pf-body h3{font-size:22px;margin-bottom:8px;}
+.pf-body p{color:var(--muted);font-size:14.5px;margin-bottom:16px;}
+.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+.pf-tags span{font-size:11.5px;border:1px solid var(--line);padding:3px 9px;border-radius:20px;color:var(--muted);}
+.pf-tags span.pf-hl{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+.pf-tags span.pf-mine{border-color:var(--gold);color:var(--gold);}
+.pf-link{margin-top:auto;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;}
+.pf-card:hover .pf-link{color:var(--gold);}
+.pf-empty{display:none;text-align:center;padding:50px 0;color:var(--muted);}
+.pf-process{display:grid;gap:24px;}
+@media(min-width:800px){.pf-process{grid-template-columns:repeat(4,1fr);}}
+.pf-process div{border-top:2px solid var(--ink);padding-top:16px;}
+.pf-process b{font-family:'Fraunces',serif;font-size:13px;color:var(--gold);display:block;margin-bottom:6px;}
+.pf-process h4{font-size:20px;margin-bottom:6px;}
+.pf-process p{font-size:14px;color:var(--muted);}
+.pf-about{display:grid;gap:32px;}
+@media(min-width:800px){.pf-about{grid-template-columns:1.3fr 1fr;}}
+.pf-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+.pf-chips span{background:var(--ink);color:var(--paper);font-size:12.5px;padding:6px 14px;border-radius:20px;}
+.pf-edu{border:1px solid var(--line);background:var(--paper-2);padding:26px;}
+.pf-edu small{font-size:12px;color:var(--gold);letter-spacing:.02em;}
+.pf-edu h4{font-size:22px;margin:6px 0;}
+
+</style>
+<script>function pfImgFail(img){var a=(img.getAttribute('data-alts')||'').split(',').filter(Boolean);if(a.length){img.setAttribute('data-alts',a.slice(1).join(','));img.src=a[0];}else{img.remove();}}</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="#top" style="text-decoration:none;">Lia Emochuo</a>
+    <div class="nav-links nav-links-desktop">
+      <a href="#listings">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#profile">About Me</a>
+      <a href="#insights">Content</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#shop">Shop</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-solid nav-cta">Message Me</a>
+      <button class="burger" onclick="toggleMobileMenu()">
+        <span>Menu</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <div class="logo">Lia Emochuo</div>
+    <button class="close-drawer" onclick="toggleMobileMenu()">✕</button>
+  </div>
+  <div class="drawer-links">
+    <a href="#listings" onclick="toggleMobileMenu()">Projects</a>
+    <a href="#services" onclick="toggleMobileMenu()">Services</a>
+    <a href="#profile" onclick="toggleMobileMenu()">About Me</a>
+    <a href="#insights" onclick="toggleMobileMenu()">Content</a>
+    <a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a>
+    <a href="#shop" onclick="toggleMobileMenu()">Shop</a>
+  </div>
+  <div style="margin-top:auto;padding-top:24px;">
+    <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-solid" style="width:100%;justify-content:center;">Message Me Directly</a>
+  </div>
+</div>
+
+<main id="view-home">
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-slot">
+      <img class="hero-avatar" src="https://i.im.ge/QQOlBDF/69807.jpg" alt="Lia Emochuo">
+    </div>
+    <div class="eyebrow">Web Developer • Creator • Entrepreneur</div>
+    <p>I build modern websites, sell products online, and create content.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/2349014608459" target="_blank" rel="noopener" class="btn btn-outline" style="background:var(--paper);color:var(--ink);border-color:var(--paper);">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.3c-.2.6-1.2 1.2-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.2-3.6-4.3-3.8-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.9.1.2.1.3 0 .5-.1.2-.2.3-.3.5l-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
+        Message me directly
+      </a>
+      <a href="#portfolio" class="btn btn-outline" style="background:var(--paper);color:var(--ink);border-color:var(--paper);">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v12H4zM2 19h20v2H2z"/></svg>
+        Portfolio
+      </a>
+      <a href="#shop" class="btn btn-outline" style="background:var(--paper);color:var(--ink);border-color:var(--paper);">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zm0 2h12l1.5 2h-15zM5 8h14v12H5zm4 2v2a3 3 0 0 0 6 0v-2h-2v2a1 1 0 0 1-2 0v-2z"/></svg>
+        Shop
+      </a>
+    </div>
+    <div class="stat-row">
+      <div><div class="num">5+</div><div class="label">Years Building Online</div></div>
+      <div><div class="num">100%</div><div class="label">Production-Ready Code</div></div>
+      <div><div class="num">360°</div><div class="label">Digital Creation</div></div>
+    </div>
+    <a href="#listings" class="btn btn-solid" style="margin-top:40px;">Explore Projects <span class="btn-arrow">→</span></a>
+  </div>
+  <div class="hero-card">
+    <div style="display:flex;align-items:center;">
+      <div class="agent-cluster">
+        <img src="https://i.im.ge/QQOlBDF/69807.jpg" alt="Lia Emochuo">
+      </div>
+      <div class="agents-text"><b>Lia Emochuo</b><span>Web Developer • Creator • Entrepreneur</span></div>
+    </div>
+    <div class="rating"><span class="stars">★★★★★</span> Verified Creator</div>
+  </div>
+</section>
+
+<div class="search-filter-section" id="listings">
+  <div class="wrap">
+    <div class="filter-container">
+      <div class="search-bar">
+        <input type="text" id="propertySearchInput" placeholder="Search by title, technology or feature..." oninput="filterListings()">
+        <button onclick="filterListings()">Search</button>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="setCategoryFilter('all', this)">All Projects</button>
+        <button class="filter-btn" onclick="setCategoryFilter('web', this)">Web Apps & Platforms</button>
+        <button class="filter-btn" onclick="setCategoryFilter('ecommerce', this)">E-Commerce & Shop</button>
+        <button class="filter-btn" onclick="setCategoryFilter('content', this)">Content & Media</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--paper-2);padding-top:40px;">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:36px;">
+      <div class="eyebrow">Portfolio & Digital Products</div>
+      <h2>Engineered for performance, built for scale.</h2>
+    </div>
+    <div class="listing-grid" id="listingGridContainer">
+      <!-- Projects populated dynamically via JavaScript -->
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Development Process</div>
+      <h2>How I bring your ideas to life.</h2>
+      <p>From initial architecture to deployment and monetization, every step is executed with precision.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>Define &amp; Architect</h3>
+        <p>A focused consultation on requirements, target audience, and tech stack — ensuring the solution matches your business goals.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Developer wireframing and planning">
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>Build &amp; Refine</h3>
+        <p>Writing clean, responsive code with modern frameworks, robust UX, and seamless backend integrations.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Code editor screen">
+    </div>
+    <div class="step rule">
+      <div class="step-num">03</div>
+      <div>
+        <h3>Launch &amp; Scale</h3>
+        <p>Rigorous testing, deployment, and ongoing optimization so your digital product thrives in production.</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Digital growth and analytics dashboard">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What I Do</div>
+      <h2>Web development, online selling, and content creation.</h2>
+    </div>
+    <div class="services">
+      <div class="service-row" onclick="openServiceModal('Web Development')" style="cursor:pointer;">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <div><h4>Web Development →</h4><p>Modern, responsive websites and web apps, built with clean UX and code that holds up in production.</p></div>
+      </div>
+      <div class="service-row" onclick="openServiceModal('Selling Products Online')" style="cursor:pointer;">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <div><h4>Selling Products Online →</h4><p>Online stores and affiliate systems that turn visitors into paying customers.</p></div>
+      </div>
+      <div class="service-row" onclick="openServiceModal('Content Creation')" style="cursor:pointer;border-bottom:none;">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <div><h4>Content Creation →</h4><p>Storytelling, design, and content that help your brand show up with clarity online.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="excellence">
+  <div class="wrap">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Collaborative development environment">
+    <div>
+      <div class="eyebrow">Standards of Excellence</div>
+      <h2>Building products that actually sell and scale.</h2>
+      <p>I build with a focus on clean UX, production-grade code, and sustainable business growth. Whether you need a full web platform or a digital storefront, the execution is meticulous.</p>
+      <div class="excellence-stats">
+        <div><div class="num">5+</div><div class="label">Years Experience</div></div>
+        <div><div class="num">End-to-End</div><div class="label">Design & Code</div></div>
+        <div><div class="num">100%</div><div class="label">Client Focus</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Profile & Background</div>
+      <h2>Meet Lia Emochuo.</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://i.im.ge/QQOlBDF/69807.jpg" alt="Lia Emochuo">
+        <div class="team-info">
+          <h4>Lia Emochuo</h4>
+          <div class="role">Web Developer • Creator • Entrepreneur</div>
+        </div>
+      </div>
+      <div style="grid-column: span 2; display:flex; flex-direction:column; justify-content:center; gap:20px; background:var(--paper-2); padding:36px; border:1px solid var(--line);">
+        <h3 style="font-family:'Fraunces',serif; font-size:26px;">"I build modern websites, sell products online, and create content."</h3>
+        <p style="color:var(--muted); line-height:1.8;">
+          I'm Lia Emochuo, a web developer, digital creator, and entrepreneur with 5+ years building products for the internet. On the development side, I design and build websites and platforms end-to-end: from affiliate and e-commerce systems to fintech-style interfaces and Telegram-based tools, focused on clean UX and code that holds up in production. As an entrepreneur, I run and grow online businesses, turning ideas into platforms that actually sell and scale. And as a creator, I tell stories and build brands through writing, design, and content — helping people and businesses show up with clarity online. Whatever the project, my focus is the same: build it well, make it work, and make it worth coming back to.
+        </p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;">
+          <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-solid">WhatsApp Me</a>
+          <a href="#portfolio" class="btn btn-outline">Portfolio</a>
+          <a href="#shop" class="btn btn-outline">Shop</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Community & Channels</div>
+      <h2>Connect across my platforms.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <p>"Explore my digital shop for curated online products and resources."</p>
+        <div class="who"><b>Lilian Enterprise Shop</b> — <a href="#shop" style="color:var(--gold);text-decoration:underline;">Visit Store</a></div>
+      </div>
+      <div class="testi">
+        <p>"Where I show up as LiaTechwave: dev work, projects, and business updates."</p>
+        <div class="who"><b>Business TikTok</b> — <a href="https://www.tiktok.com/@lia.techwave" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">@lia.techwave</a></div>
+      </div>
+      <div class="testi">
+        <p>"Connect with me professionally on LinkedIn and view my latest updates."</p>
+        <div class="who"><b>LinkedIn Profile</b> — <a href="https://www.linkedin.com/in/ifunanya-emochuo-1617b3268?trk=contact-info" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">Connect</a></div>
+      </div>
+      <div class="testi">
+        <p>"Watch my latest content, tech insights, and creative sessions."</p>
+        <div class="who"><b>YouTube</b> — <a href="https://youtube.com/@theliasession?si=EQkOwvP-VpFEfYRy" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">The Lia Session</a></div>
+      </div>
+      <div class="testi">
+        <p>"Videos and the things I make outside of work."</p>
+        <div class="who"><b>Personal TikTok</b> — <a href="https://www.tiktok.com/@iffyofficially" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">@iffyofficially</a></div>
+      </div>
+      <div class="testi">
+        <p>"Music and the things I create outside of work."</p>
+        <div class="who"><b>Spotify</b> — <a href="https://open.spotify.com/artist/0fc3c7pSNfN4Z7sBU1VH8W" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;">Listen</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Insights & Creation</div>
+      <h2>Thoughts on web development, entrepreneurship, and digital creation.</h2>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-feature" onclick="openInsightModal('Why clean UX and robust architecture matter in modern web development', 'Development Guide', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?fm=jpg&q=70&w=900&auto=format&fit=crop')">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Web development code">
+        <div class="insight-body">
+          <div class="insight-tag">Development Guide</div>
+          <h4>Why clean UX and robust architecture matter in modern web development</h4>
+        </div>
+      </div>
+      <div class="insight-small" onclick="openInsightModal('Building and scaling online stores that convert', 'E-Commerce', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=jpg&q=70&w=700&auto=format&fit=crop')">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="E-commerce growth">
+        <div class="insight-small-body">
+          <div>
+            <div class="insight-tag">E-Commerce</div>
+            <h4>Building and scaling online stores that convert</h4>
+          </div>
+          <span style="font-size:13px;color:var(--gold);">Read article →</span>
+        </div>
+      </div>
+      <div class="insight-small" onclick="openInsightModal('The intersection of content creation and tech entrepreneurship', 'Entrepreneurship', 'https://images.unsplash.com/photo-1531482615713-2afd69097998?fm=jpg&q=70&w=700&auto=format&fit=crop')">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?fm=jpg&q=70&w=700&auto=format&fit=crop" alt="Creation and tech">
+        <div class="insight-small-body">
+          <div>
+            <div class="insight-tag">Entrepreneurship</div>
+            <h4>The intersection of content creation and tech entrepreneurship</h4>
+          </div>
+          <span style="font-size:13px;color:var(--gold);">Read article →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to build something amazing together?</h2>
+    <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-solid">Message Me on WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<main id="view-portfolio" hidden>
+<section class="pf-hero">
+  <div class="wrap">
+    <div class="pf-eyebrow">Portfolio</div>
+    <h1>Websites and platforms I've built, full-stack and end to end.</h1>
+    <p class="pf-lead">Real estate, e-commerce, recruitment, media and fintech. Production-ready products built end to end, front end to backend.</p>
+    <div class="pf-stats">
+      <div class="pf-stat"><div class="num">13+</div><div class="label">Live projects</div></div>
+      <div class="pf-stat"><div class="num">5+</div><div class="label">Years building online</div></div>
+      <div class="pf-stat pf-stat-full"><div class="num">Full-stack</div><div class="label">Front &amp; backend</div></div>
+    </div>
+    <div class="pf-hero-btns">
+      <a href="https://wa.me/2349014608459" target="_blank" rel="noopener" class="pf-btn pf-btn-gold">Start a project <span>→</span></a>
+      <a href="#work" class="pf-btn pf-btn-line">View work <span>↓</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="pf-filters" id="work">
+  <div class="wrap"><div class="filter-tabs"><button class="filter-btn active" data-cat="all">All work</button><button class="filter-btn" data-cat="platform">Web platforms</button><button class="filter-btn" data-cat="ecommerce">E-commerce</button><button class="filter-btn" data-cat="brand">Brands &amp; portfolios</button><button class="filter-btn" data-cat="realestate">Real estate</button><button class="filter-btn" data-cat="content">Content &amp; media</button><button class="filter-btn" data-cat="business">Business</button></div></div>
+</div>
+
+<section style="padding-top:44px;">
+  <div class="wrap">
+    <div class="pf-grid" id="pfGrid">
+      <a class="pf-card" href="https://maisondoreehomes.pages.dev/" target="_blank" rel="noopener" data-cat="realestate">
+        <div class="pf-shot">
+          <span class="pf-initial">M</span>
+          <span class="pf-badge">Real Estate</span>
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="Maison Dorée website" loading="eager" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Maison Dorée</h3>
+          <p>An elegant real estate site showcasing luxury homes, with refined design and effortless property browsing.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Luxury</span><span>Listings</span><span>Responsive</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://vervesparklingdrink.pages.dev/" target="_blank" rel="noopener" data-cat="brand">
+        <div class="pf-shot">
+          <span class="pf-initial">V</span>
+          <span class="pf-badge">Beverage Brand</span>
+          <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=900&amp;q=70&amp;auto=format&amp;fit=crop,https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="Verve Sparkling Drink website" loading="eager" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Verve Sparkling Drink</h3>
+          <p>A vibrant, fizzy brand site for a sparkling drink, with bold visuals and a fresh, energetic feel.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Brand</span><span>3D Hero</span><span>Animation</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://stevenowlin.pages.dev/" target="_blank" rel="noopener" data-cat="brand">
+        <div class="pf-shot">
+          <span class="pf-initial">S</span>
+          <span class="pf-badge">Portfolio Site</span>
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="Steve Nowlin website" loading="eager" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Steve Nowlin</h3>
+          <p>A clean, modern personal portfolio presenting Steve Nowlin and his work.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Portfolio</span><span>Personal Brand</span><span>Responsive</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://goviraa.kesug.com" target="_blank" rel="noopener" data-cat="platform">
+        <div class="pf-shot">
+          <span class="pf-initial">G</span>
+          <span class="pf-badge">SMM Panel</span>
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="Goviraa website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Goviraa</h3>
+          <p>A social media marketing panel where users can order followers, likes and views for their social accounts.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>SMM</span><span>Orders</span><span>Dashboard</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://aldermererealestate.pages.dev/" target="_blank" rel="noopener" data-cat="realestate">
+        <div class="pf-shot">
+          <span class="pf-initial">A</span>
+          <span class="pf-badge">Real Estate Platform</span>
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Aldermere website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Aldermere</h3>
+          <p>A modern real estate platform for browsing listings and finding your next home with ease.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Listings</span><span>Search</span><span>Responsive</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://omart-era.pages.dev/" target="_blank" rel="noopener" data-cat="ecommerce">
+        <div class="pf-shot">
+          <span class="pf-initial">O</span>
+          <span class="pf-badge">E-Commerce</span>
+          <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&amp;q=70&amp;auto=format&amp;fit=crop,https://images.unsplash.com/photo-1556742049-0a67d553c2a5?w=900&amp;q=70&amp;auto=format&amp;fit=crop" alt="Omart website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Omart</h3>
+          <p>A clean online store with product browsing and a smooth shopping flow.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Store</span><span>Cart</span><span>Responsive</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://strandmagazine.pages.dev/" target="_blank" rel="noopener" data-cat="content">
+        <div class="pf-shot">
+          <span class="pf-initial">S</span>
+          <span class="pf-badge">Digital Magazine</span>
+          <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Strand website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Strand</h3>
+          <p>A magazine for contemporary fashion, independent design, street style, culture and curated editorial photography.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Editorial</span><span>Fashion</span><span>Design</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://conzult.pages.dev/" target="_blank" rel="noopener" data-cat="business">
+        <div class="pf-shot">
+          <span class="pf-initial">C</span>
+          <span class="pf-badge">Business Consulting</span>
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Conzult website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Conzult</h3>
+          <p>A business consulting site offering strategic guidance and solutions for growing companies.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Corporate</span><span>Lead Gen</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://scoutly-kappa.vercel.app/" target="_blank" rel="noopener" data-cat="platform">
+        <div class="pf-shot">
+          <span class="pf-initial">S</span>
+          <span class="pf-badge">Sports Recruitment</span>
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Scoutly website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Scoutly</h3>
+          <p>A sports recruitment platform connecting players with clubs abroad.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Platform</span><span>Profiles</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://streamz-seven.vercel.app/" target="_blank" rel="noopener" data-cat="platform">
+        <div class="pf-shot">
+          <span class="pf-initial">S</span>
+          <span class="pf-badge">Streaming Platform</span>
+          <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Streamz website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Streamz</h3>
+          <p>A movie download platform with a fast, browsable catalogue.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Media</span><span>Catalogue</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://cashsd.ct.ws/?i=1" target="_blank" rel="noopener" data-cat="platform">
+        <div class="pf-shot">
+          <span class="pf-initial">C</span>
+          <span class="pf-badge">Task-to-Earn</span>
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="CashSD website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>CashSD</h3>
+          <p>A task-to-earn platform, similar to Swagbucks, where people complete tasks to earn money.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Fintech</span><span>Dashboard</span><span>PHP</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://careerbridgelimited.top/" target="_blank" rel="noopener" data-cat="platform">
+        <div class="pf-shot">
+          <span class="pf-initial">C</span>
+          <span class="pf-badge">Job Platform</span>
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="CareerBridge Limited website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>CareerBridge Limited</h3>
+          <p>A job platform where people can browse listings and apply for work.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Jobs</span><span>Applications</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+<a class="pf-card" href="https://iykon.lovestoblog.com/?i=1" target="_blank" rel="noopener" data-cat="ecommerce">
+        <div class="pf-shot">
+          <span class="pf-initial">I</span>
+          <span class="pf-badge">E-Commerce</span>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&amp;q=70&amp;auto=format&amp;fit=crop" data-alts="" alt="Iykon Guinea Gold website" loading="lazy" onerror="pfImgFail(this)">
+        </div>
+        <div class="pf-body">
+          <h3>Iykon Guinea Gold</h3>
+          <p>An e-commerce store for heavy machinery, including rice processing machines.</p>
+          <div class="pf-tags"><span class="pf-hl">Full-stack</span><span class="pf-mine">Built by me</span><span>Store</span><span>Catalogue</span><span>PHP</span></div>
+          <div class="pf-link"><span>Visit live site</span><span>↗</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div class="pf-empty" id="pfEmpty">No projects in this category yet.</div>
+  </div>
+</section>
+
+<section style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How I work</div>
+      <h2>From idea to live site.</h2>
+    </div>
+    <div class="pf-process">
+      <div><b>01</b><h4>Discover</h4><p>We talk goals, audience and what the site needs to do.</p></div>
+      <div><b>02</b><h4>Design</h4><p>I design clean, mobile-first interfaces that match your brand.</p></div>
+      <div><b>03</b><h4>Build</h4><p>I code the front end and the backend: databases, logins, admin dashboards and integrations.</p></div>
+      <div><b>04</b><h4>Launch</h4><p>I test, deploy and support it so it keeps working.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="pf-about">
+      <div>
+        <div class="eyebrow">About the builder</div>
+        <h2 style="margin-bottom:16px;">Lia Emochuo</h2>
+        <p style="color:var(--muted);line-height:1.8;">I'm a full-stack web developer, creator and entrepreneur. I build the whole product myself: the interface, the backend, the database and the admin tools. That covers websites, online stores, affiliate and fintech-style platforms and Telegram bots, with a focus on clean UX and reliability.</p>
+        <div class="pf-chips">
+          <span>Full-stack development</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>HTML &amp; CSS</span><span>Authentication &amp; admin dashboards</span><span>APIs &amp; integrations</span><span>Telegram bots</span><span>E-commerce</span><span>Hosting &amp; deployment</span>
+        </div>
+      </div>
+      <div class="pf-edu">
+        <small>Experience</small>
+        <h4>5+ years building full-stack</h4>
+        <p style="color:var(--muted);font-size:14.5px;">Front end, backend and database work on every project, from first idea to live launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Have a project in mind?</h2>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <a href="mailto:liatechwave@gmail.com?subject=Website%20Inquiry" class="btn btn-solid">Email me</a>
+      <a href="https://wa.me/2349014608459" target="_blank" rel="noopener" class="btn btn-solid">Message me on WhatsApp</a>
+      <a href="https://www.tiktok.com/@lia.techwave" target="_blank" rel="noopener" class="btn btn-solid">Follow the build on TikTok</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<main id="view-shop" hidden>
+<section class="blog-hero">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#E4C98A;">Lilian Enterprise</div>
+    <h1>Affordable lifestyle, beauty & home essentials.</h1>
+    <p>Hand-picked products, delivered nationwide. Every item links straight to checkout on Jumia.</p>
+  </div>
+</section>
+
+<section style="padding-top:56px;">
+  <div class="wrap">
+    <div class="listing-grid">
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOuj34/53890.png" alt="Large kitchen dish and plate rack">
+        <div class="shop-body">
+          <h3>Large Kitchen Plate Rack</h3>
+          <div class="shop-meta"><span class="shop-price">₦80,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://vt.tiktok.com/ZSq1eEc7t/" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOum4C/34136.jpg" alt="Lia Glow skincare cream">
+        <div class="shop-body">
+          <h3>Lia Glow — for Acne removal, skin repair & even skin tone</h3>
+          <div class="shop-meta"><span class="shop-price">₦4,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/reel/DccWgWgEiqt/?igsi=MXZ3dXdvd3RqYjk2YQ==" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://images.unsplash.com/photo-1732605549016-7983a22820f0?auto=format&fit=crop&w=800&q=80" alt="Garment steamer in use on hanging fabric">
+        <div class="shop-body">
+          <h3>Garment Steamer</h3>
+          <div class="shop-meta"><span class="shop-price">₦30,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/reel/DchgOGWiXEM/?igsi=Ym0xYnZhaHN5MTE5" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Wall-mounted suction organizer">
+        <div class="shop-body">
+          <h3>Wall-Mounted Suction Organizer</h3>
+          <div class="shop-meta"><span class="shop-price">₦15,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/reel/DccXwnYDJL2/?igsi=bGh1cGVzOW5lN3Vv" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOuCWm/70537.jpg" alt="Inflatable lounge sofa">
+        <div class="shop-body">
+          <h3>Inflatable Sofa</h3>
+          <div class="shop-meta"><span class="shop-price">₦50,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/reel/Dce0m69AMQp/?igsi=MTA5cG53ZWU5M3dydg==" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOuxor/70565.jpg" alt="Rotating shoe storage rack">
+        <div class="shop-body">
+          <h3>Rotating Shoe Rack</h3>
+          <div class="shop-meta"><span class="shop-price">₦100,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://vt.tiktok.com/ZSq1e9qma/" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOu3UW/70570.jpg" alt="Waterproof shower phone holder">
+        <div class="shop-body">
+          <h3>Waterproof Shower Phone Holder</h3>
+          <div class="shop-meta"><span class="shop-price">₦15,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://vt.tiktok.com/ZSq1eqLCu/" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-card">
+        <img src="https://i.im.ge/QQOu9UD/53901.png" alt="Over-the-door hook rack">
+        <div class="shop-body">
+          <h3>Over-the-Door Hook Rack</h3>
+          <div class="shop-meta"><span class="shop-price">₦6,000</span><span class="shop-badge">IN STOCK</span></div>
+          <div class="shop-btn-row">
+            <a class="btn btn-solid" href="https://www.jumia.com.ng/lia-enterprise/" target="_blank" rel="noopener">Buy on Jumia</a>
+            <a class="btn btn-outline" href="https://vt.tiktok.com/ZSq1e4Mdv/" target="_blank" rel="noopener">View Product</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>New arrivals & restocks first on social.</h2>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <a href="https://www.facebook.com/LilianEnterprise" target="_blank" class="btn btn-solid">Facebook</a>
+      <a href="https://www.tiktok.com/@lilianenterprise?_r=1&_t=ZS-99OrHcLzDUd" target="_blank" class="btn btn-solid">TikTok</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">Lia Emochuo</div>
+        <p style="max-width:280px;font-size:14px;">I build modern websites, sell products online, and create content.</p>
+      </div>
+      <div>
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#listings">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#profile">About Me</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Links</h5>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="https://www.tiktok.com/@lia.techwave" target="_blank">Business TikTok</a></li>
+          <li><a href="https://www.tiktok.com/@iffyofficially" target="_blank">Personal TikTok</a></li>
+          <li><a href="https://www.linkedin.com/in/ifunanya-emochuo-1617b3268?trk=contact-info" target="_blank">LinkedIn</a></li>
+          <li><a href="https://open.spotify.com/artist/0fc3c7pSNfN4Z7sBU1VH8W" target="_blank">Spotify</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=liatechwave@gmail.com&amp;su=Website%20Inquiry" target="_blank" rel="noopener">liatechwave@gmail.com</a></li>
+          <li><a href="https://wa.me/2349014608459" target="_blank">WhatsApp Chat</a></li>
+          <li><a href="https://youtube.com/@theliasession?si=EQkOwvP-VpFEfYRy" target="_blank">YouTube Channel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Lia Emochuo. All rights reserved.</span>
+      <span>Web Developer • Creator • Entrepreneur</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="generalModal" onclick="checkModalBackdrop(event)">
+  <div class="modal-card" id="modalContentContainer">
+    <!-- Dynamic modal content -->
+  </div>
+</div>
+
+<div class="toast" id="toastNotification">Action completed successfully</div>
+
+<div class="toast" id="toastNotification">Action completed successfully</div>
+
+<script>
+
+  // Complete Projects Database
+  const projects = [
+    {
+      id: 1,
+      title: "LTW Portfolio Platform",
+      category: "web",
+      price: "Portfolio Web App",
+      tech: "Full-Stack • Clean UX",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=70&auto=format&fit=crop",
+      alts: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&q=70&auto=format&fit=crop,https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=70&auto=format&fit=crop",
+      description: "A centralized platform showcasing modern web development projects, client solutions, and production-grade code archives.",
+      link: "#portfolio"
+    },
+    {
+      id: 2,
+      title: "Lilian Enterprise Store",
+      category: "ecommerce",
+      price: "E-Commerce System",
+      tech: "Online Store • Digital Products",
+      image: "https://images.unsplash.com/photo-1556742049-0a67d553c2a5?w=900&q=70&auto=format&fit=crop",
+      alts: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=900&q=70&auto=format&fit=crop,https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=70&auto=format&fit=crop",
+      description: "An e-commerce platform built to sell products online seamlessly with secure checkout flows and digital product delivery.",
+      link: "#shop"
+    },
+    {
+      id: 5,
+      title: "The Lia Session Content Hub",
+      category: "content",
+      price: "Media & Branding",
+      tech: "Storytelling • YouTube & TikTok",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=70&auto=format&fit=crop",
+      alts: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=70&auto=format&fit=crop,https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&q=70&auto=format&fit=crop",
+      description: "Digital storytelling and educational content hub sharing insights on web development, entrepreneurship, and building online brands.",
+      link: "https://youtube.com/@theliasession?si=EQkOwvP-VpFEfYRy"
+    }
+  ];
+
+  // Image fallback: try alternates, then an inline placeholder (no external dependency)
+  function cardImgFail(img){
+    var a=(img.getAttribute('data-alts')||'').split(',').filter(Boolean);
+    if(a.length){img.setAttribute('data-alts',a.slice(1).join(','));img.src=a[0];return;}
+    img.onerror=null;
+    img.src="data:image/svg+xml;utf8,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='900' height='600'><rect width='900' height='600' fill='#E6E0D2'/><text x='450' y='315' font-family='Georgia,serif' font-size='56' fill='#1E1B17' text-anchor='middle'>Lia Emochuo</text></svg>");
+  }
+
+  let currentCategory = 'all';
+
+  // Render Projects
+  function renderListings(list) {
+    const container = document.getElementById('listingGridContainer');
+    if (!list || list.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1/-1; text-align:center; padding:60px 20px;">
+          <h4 style="font-family:'Fraunces',serif; font-size:22px; margin-bottom:10px;">No projects matched your search</h4>
+          <p style="color:var(--muted); margin-bottom:20px;">Try adjusting your keywords or clearing the active filter.</p>
+          <button class="btn btn-outline" onclick="resetSearch()">View All Projects</button>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = list.map(item => `
+      <div class="listing-card" onclick="openPropertyDetail(${item.id})">
+        <img src="${item.image}" data-alts="${item.alts||''}" alt="${item.title}" loading="lazy" onerror="cardImgFail(this)">
+        <div class="listing-body">
+          <div class="listing-loc">${item.tech}</div>
+          <h4>${item.title}</h4>
+          <div class="listing-price">${item.price}</div>
+          <div class="listing-meta"><span>View Project</span><span>→</span></div>
+        </div>
+      </div>
+    `).join('') + `
+      <div class="listing-card" style="display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 28px;background:var(--paper);">
+        <div>
+          <h4 style="margin-bottom:10px;">Have a custom project in mind?</h4>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">Let's discuss your requirements and build something exceptional together.</p>
+          <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-outline">Message Me</a>
+        </div>
+      </div>
+    `;
+  }
+
+  // Filter projects by category & search input
+  function filterListings() {
+    const query = document.getElementById('propertySearchInput').value.toLowerCase();
+    const filtered = projects.filter(item => {
+      const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
+      const matchesQuery = item.title.toLowerCase().includes(query) || item.tech.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
+      return matchesCategory && matchesQuery;
+    });
+    renderListings(filtered);
+  }
+
+  function setCategoryFilter(cat, btnEl) {
+    currentCategory = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btnEl.classList.add('active');
+    filterListings();
+  }
+
+  function resetSearch() {
+    document.getElementById('propertySearchInput').value = '';
+    currentCategory = 'all';
+    document.querySelectorAll('.filter-btn').forEach((b, idx) => {
+      if (idx === 0) b.classList.add('active');
+      else b.classList.remove('active');
+    });
+    renderListings(projects);
+  }
+
+  // Mobile Drawer Toggle
+  function toggleMobileMenu() {
+    const drawer = document.getElementById('mobileDrawer');
+    drawer.classList.toggle('open');
+  }
+
+  // Modal handlers
+  function openModalHTML(htmlContent) {
+    const overlay = document.getElementById('generalModal');
+    const container = document.getElementById('modalContentContainer');
+    container.innerHTML = `<button class="modal-close" onclick="closeModal()">✕</button>` + htmlContent;
+    overlay.classList.add('active');
+  }
+
+  function closeModal() {
+    const overlay = document.getElementById('generalModal');
+    overlay.classList.remove('active');
+  }
+
+  function checkModalBackdrop(e) {
+    if (e.target.id === 'generalModal') {
+      closeModal();
+    }
+  }
+
+  // Project Detail Modal
+  function openPropertyDetail(id) {
+    const proj = projects.find(p => p.id === id);
+    if (!proj) return;
+    openModalHTML(`
+      <div style="margin-bottom:20px;">
+        <div class="eyebrow">${proj.tech}</div>
+        <h2>${proj.title}</h2>
+        <div style="font-size:22px;font-weight:600;color:var(--gold);margin-top:6px;">${proj.price}</div>
+      </div>
+      <img src="${proj.image}" alt="${proj.title}" style="width:100%;height:300px;object-fit:cover;margin-bottom:20px;border-radius:2px;">
+      <p style="color:var(--muted);margin-bottom:28px;line-height:1.7;">${proj.description}</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="${proj.link}" ${proj.link.startsWith('http') ? 'target="_blank" rel="noopener"' : 'onclick="closeModal()"'} class="btn btn-solid">Visit Live Project / Link</a>
+        <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-outline">Inquire on WhatsApp</a>
+      </div>
+    `);
+  }
+
+  // Service Modal
+  function openServiceModal(serviceName) {
+    openModalHTML(`
+      <h2 style="margin-bottom:8px;">${serviceName}</h2>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Professional web development and digital solutions by Lia Emochuo.</p>
+      <p style="margin-bottom:20px;line-height:1.7;color:var(--ink);">I design and build websites, online stores, and digital products end-to-end with clean UX, robust code, and a focus on scalability and conversion.</p>
+      <div style="background:var(--paper-2);padding:18px;border-left:3px solid var(--gold);margin-bottom:24px;font-size:14px;">
+        <b>Ready to build your project?</b> Reach out directly via WhatsApp or email to discuss your requirements.
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://wa.me/2349014608459" target="_blank" class="btn btn-solid">Message Me on WhatsApp</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=liatechwave@gmail.com&amp;su=Website%20Inquiry" target="_blank" rel="noopener" class="btn btn-outline">Send Email</a>
+      </div>
+    `);
+  }
+
+  // Insight Modal
+  function openInsightModal(title, tag, imgUrl) {
+    openModalHTML(`
+      <div class="eyebrow">${tag}</div>
+      <h2 style="margin-bottom:16px;">${title}</h2>
+      <img src="${imgUrl}" alt="${title}" style="width:100%;height:260px;object-fit:cover;margin-bottom:20px;border-radius:2px;">
+      <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">Building modern digital products requires a balance of clean architecture, engaging user experience, and practical business strategy. Through my work in web development and content creation, I focus on delivering solutions that are both functional and impactful.</p>
+      <p style="color:var(--muted);margin-bottom:24px;line-height:1.7;">Whether you are launching an online store, a custom web app, or building your digital brand, getting the details right makes all the difference.</p>
+      <button class="btn btn-solid" onclick="closeModal()">Close Article</button>
+    `);
+  }
+
+  // Toast Notification
+  function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4000);
+  }
+
+  // Initialize on load
+  renderListings(projects);
+
+(function(){
+  var btns=document.querySelectorAll('.pf-filters .filter-btn'),cards=document.querySelectorAll('.pf-card'),empty=document.getElementById('pfEmpty');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('active');});b.classList.add('active');
+    var cat=b.getAttribute('data-cat'),shown=0;
+    cards.forEach(function(c){var s=cat==='all'||c.getAttribute('data-cat')===cat;c.classList.toggle('hide',!s);if(s)shown++;});
+    empty.style.display=shown?'none':'block';
+  });});
+})();
+
+
+  // ---- Single-page router: #portfolio / #shop switch views, any other hash = home (+ scroll to section)
+  (function(){
+    var views={home:document.getElementById('view-home'),portfolio:document.getElementById('view-portfolio'),shop:document.getElementById('view-shop')};
+    var titles={home:'Lia Emochuo — Web Developer, Creator & Entrepreneur',portfolio:'Portfolio — Lia Emochuo',shop:'Shop — Lilian Enterprise'};
+    function route(){
+      var h=decodeURIComponent(location.hash.slice(1));
+      var v=(h==='portfolio'||h==='shop')?h:'home';
+      for(var k in views) views[k].hidden=(k!==v);
+      document.title=titles[v];
+      var drawer=document.getElementById('mobileDrawer'); if(drawer) drawer.classList.remove('open');
+      var target=(v==='home'&&h)?document.getElementById(h):null;
+      if(target){ target.scrollIntoView(); }
+      else { window.scrollTo(0,0); }
+    }
+    window.addEventListener('hashchange',route);
+    route();
+  })();
+
+</script>
+
+</body>
+</html>
